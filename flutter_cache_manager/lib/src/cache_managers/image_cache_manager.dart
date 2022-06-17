@@ -86,7 +86,8 @@ mixin ImageCacheManager on BaseCacheManager {
     if (maxWidth != null && maxHeight != null) {
       var resizeFactorWidth = image.width / maxWidth;
       var resizeFactorHeight = image.height / maxHeight;
-      var resizeFactor = max(resizeFactorHeight, resizeFactorWidth);
+      // var resizeFactor = max(resizeFactorHeight, resizeFactorWidth);
+      var resizeFactor = min(resizeFactorHeight, resizeFactorWidth);
 
       maxWidth = (image.width / resizeFactor).round();
       maxHeight = (image.height / resizeFactor).round();
